@@ -19,6 +19,20 @@ def event_two(request):
 		'name' : name,
 		})
 
+def event_three(request):
+	name = 'Leo'
+	return render(request, 
+		'events/event_three.html', {
+		'name' : name,
+		})
+
+def event_four(request):
+	name = 'Leo'
+	return render(request, 
+		'events/event_four.html', {
+		'name' : name,
+		})	
+
 def search_student(request):
 	if request.method == "POST":
 		searched = request.POST['searched']
