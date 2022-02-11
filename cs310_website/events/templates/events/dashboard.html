@@ -1,0 +1,31 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+	
+	<h1> 学生个人中心 Dashboard </h1><br>
+
+<br/>
+<table class="table table-striped table-hover table-bordered ">
+	{% for student in Student %}
+        	<tr>
+    			<td>
+    					<strong>{{ student.name }}</strong>
+    			</td>
+    			<td>
+    				班级Class：{{ student.classroom }}
+    			</td>
+    			<td>
+							奖牌Badge：{{ student.badge }}
+    			</td>
+    			<td>
+    				<a href=" {% url 'show-student' student.id %}"><input type = "submit" value = "进入Enter" class = "btn btn-success"></a>
+    			</td>
+    			<td>
+    					<a href=" {% url 'update-student' student.id %}"><input type = "submit" value = "更新Update" class = "btn btn-success"></a>
+    			</td>
+    		</tr>
+
+{% endfor %}
+</table>
+
+{% endblock %}

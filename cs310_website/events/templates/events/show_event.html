@@ -1,0 +1,38 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+	
+
+<div class="card">
+  <div class="card-header">
+    <strong>{{ event.name }}</strong>
+  </div>
+  <div class="card-body">
+    
+    <p class="card-text">
+    <ul>
+
+	  <li>简介-Description：{{ event.description }}</li>
+
+    </p>
+	</ul>
+  {% if event.id == 2 %}
+	<a href=" {% url 'event-one'  %}">
+      <input type = "submit" value = "开始挑战-Start Challenge" class = "btn btn-success"></a>
+
+  {% elif event.id == 3 %}
+  <a href=" {% url 'event-two'  %}">
+      <input type = "submit" value = "开始挑战-Start Challenge" class = "btn btn-success"></a>
+
+  {% else %}
+  <a href=" {% url 'events/home'  %}">
+      <input type = "submit" value = "开始挑战-Start Challenge" class = "btn btn-success"></a>
+
+	{% endif %}
+    </p>
+  
+   
+  </div>
+</div>
+
+{% endblock %}
