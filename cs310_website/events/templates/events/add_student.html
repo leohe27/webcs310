@@ -1,7 +1,8 @@
 {% extends 'events/base.html' %}
 
 {% block content %}
-	
+{% if user.is_authenticated %}
+
 	<center>
 	<h1> Add Student To Database 添加学生 </h1>
 	<br/><br/>
@@ -22,6 +23,9 @@
 	{% endif %}
 
 	</center>
+{% else %}
+	<h1>Logged In Needed </h1>
 
-
+	<a class="nav-link" href="{%url 'login' %}">Login Here</a>
+	{% endif %}
 {% endblock %}

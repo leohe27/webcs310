@@ -13,6 +13,7 @@ class MyClassStudent(models.Model):
 	name = models.CharField(max_length=30)
 	classroom = models.ForeignKey(Classroom, blank = True, null = True, on_delete=models.CASCADE)
 	badge = models.CharField(max_length=30, blank = True, null = True)
+	teacher = models.CharField(max_length=60)
 	def __str__(self):
 		return self.name
 		

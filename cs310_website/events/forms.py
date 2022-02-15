@@ -7,16 +7,18 @@ from .models import Classroom
 class StudentForm(ModelForm):
 	class Meta:
 		model = MyClassStudent
-		fields = ('name','classroom','badge')
+		fields = ('name','classroom','badge','teacher')
 		labels = {
 			'name': '学生名称',
 			'classroom':'班级',
 			'badge':'奖章',
+			'teacher':'老师',
 		}
 		widgets = {
 			'name': forms.TextInput(attrs={'class':'form-control'}),
 			'classroom':forms.TextInput(attrs={'class':'form-control'}),
 			'badge':forms.TextInput(attrs={'class':'form-control'}),
+			'teacher':forms.TextInput(attrs={'class':'form-control'}),
 		}
 
 # class ClassroomForm(ModelForm):

@@ -1,20 +1,34 @@
 {% extends 'events/base.html' %}
 
 {% block content %}
-	
-	
-	<h1> Update Student </h1><br/>
+{% if user.is_authenticated %}	
+	{% if user.get_username == Student.teacher %}
 
+	<h1> Update Student </h1><br/>
 	<form action="" method = POST>
 		{% csrf_token %}
 		{{  form.as_p }}
 		<br/>
-		<input type="submit" value="Update" class="btn btn-secondary"
+		<input type="submit" value="Update" class="btn btn-secondary">
+	</form>
+	{% else %}
+	<h2> Access Denied </h2>
+	<p>Only the student's teacher can update this</p>
+	Looged In User: {{ user }}
+	<br/>
+	Teacher: {{ Student.teacher }}
+	<br/>
+	<br/>
+	{% endif %}	
 
 
+{% else %}
+	<h1>Logged In Needed </h1>
 
-
+	<a class="nav-link" href="{%url 'login' %}">Login Here</a>
+{% endif %}
 
 
 
 {% endblock %}
+
