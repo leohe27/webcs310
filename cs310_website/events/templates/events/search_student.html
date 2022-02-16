@@ -5,16 +5,34 @@
 	<center>
 
 	{% if searched %}
-	<h1> You Searched For {{searched}} </h1><br/>
-
+	<h1> You Searched For "{{searched}}" </h1><br/>
+	<p>This page only shows search results registered by teacher: <strong>{{ user }}</strong></p>
+		<table class="table table-striped table-hover table-bordered ">
 		{% for student in students %}
-			<a href = "{% url 'show-student' student.id %}">{{ student }}</a></br>
-
+		{% if user.get_username == student.teacher %}
+        	<tr>
+    			<td>
+    				<strong>{{ student.name }}</strong>
+    			</td>
+    			<td>
+    				班级Class：{{ student.classroom }}
+    			</td>
+    			<td>
+					奖牌Badge：{{ student.badge }}
+    			</td>
+    			<td>
+					老师-Teacher：{{ student.teacher }}
+    			</td>
+    			<td>
+    				<a href=" {% url 'show-student' student.id %}"><input type = "submit" value = "进入Enter" class = "btn btn-success"></a>
+    			</td>
+    		</tr>
+    	{% endif %}
 		{% endfor %}
-
+		</table>
 	{% else %}
 
-	<h1> You forgot to search for a student</h1>
+	<h1> You forgot to search for a student or You are not authrised to the result</h1>
 
 	{% endif %}
 	</center>
@@ -22,3 +40,4 @@
 
 
 {% endblock %}
+

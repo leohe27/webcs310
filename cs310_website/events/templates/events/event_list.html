@@ -4,28 +4,66 @@
 	
 	<h1> 课程 Events </h1>
 
-
+<strong> Lesson 1:Introduction</strong>
 <table class="table table-striped table-hover table-bordered ">
-	{% for event in event_list %}
+{% for event in event_list %}
+{% if event.lesson == 1 %}
         	<tr>
     			<td>
     					<strong>{{ event.name }}</strong>
     			</td>
     			<td>
-    				完成奖励Badge Reward: 2 
+    				奖励-Reward: {{ event.reward }} 
     			</td>
     			<td>
     					<a href=" {% url 'show-event' event.id %}">
     					<input type = "submit" value = "进入Enter" class = "btn btn-success"></a>
-    				
     			</td>
-    			
     		</tr>
-
+{% endif %}
 {% endfor %}
 </table>
-	
-	<br/>
+<br/>
 
+<strong> Lesson 2:Exploration</strong>
+<table class="table table-striped table-hover table-bordered ">
+{% for event in event_list %}
+{% if event.lesson == 2 %}
+        	<tr>
+    			<td>
+    					<strong>{{ event.name }}</strong>
+    			</td>
+    			<td>
+    				奖励-Reward: {{ event.reward }} 
+    			</td>
+    			<td>
+    					<a href=" {% url 'show-event' event.id %}">
+    					<input type = "submit" value = "进入Enter" class = "btn btn-success"></a>
+    			</td>
+    		</tr>
+{% endif %}
+{% endfor %}
+</table>
+<br/>
 
+<strong> Lesson 3:Reflection</strong>
+<table class="table table-striped table-hover table-bordered ">
+{% for event in event_list %}
+{% if event.lesson == 3 %}
+        	<tr>
+    			<td>
+    					<strong>{{ event.name }}</strong>
+    			</td>
+    			<td>
+    				奖励-Reward: {{ event.reward }} 
+    			</td>
+    			<td>
+    					<a href=" {% url 'show-event' event.id %}">
+    					<input type = "submit" value = "进入Enter" class = "btn btn-success"></a>
+    			</td>
+    		</tr>
+{% endif %}
+{% endfor %}
+</table>
+<br/>
 {% endblock %}

@@ -9,18 +9,14 @@
   </div>
   <div class="card-body">
     
-    <p class="card-text">
+   <p class="card-text">
     <ul>
-
-
-	<li>奖牌-Badge：{{ Student.badge }}</li>
-	<li>班级-Classroom：{{ Student.classroom }}</li>
-	<li>老师-Teacher：{{ Student.teacher }</li>
-	</ul>
-	
-		
-    </p>
-   
+			<li>奖牌-Badge：{{ Student.badge }}</li>
+			<li>班级-Classroom：{{ Student.classroom }}</li>
+			<li>老师-Teacher：{{ Student.teacher }}</li>
+		</ul>
+   </p>
+   <a href=" {% url 'update-student' Student.id %}"><input type = "submit" value = "更新Update" class = "btn btn-success"></a>
   </div>
 </div>
 

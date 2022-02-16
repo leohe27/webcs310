@@ -3,11 +3,14 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-	<h1> 学生个人中心 Dashboard </h1><br>
+	<h1> 学生个人中心 Student Dashboard </h1><br>
+	<br/>
+	<p>This page only shows stduents registered by teacher: <strong>{{ user }}</strong></p>
+	<br/>
 
-<br/>
 <table class="table table-striped table-hover table-bordered ">
 	{% for student in Student %}
+	{% if user.get_username == student.teacher %}
         	<tr>
     			<td>
     					<strong>{{ student.name }}</strong>
@@ -16,20 +19,22 @@
     				班级Class：{{ student.classroom }}
     			</td>
     			<td>
-							奖牌Badge：{{ student.badge }}
+					奖牌Badge：{{ student.badge }}
     			</td>
     			<td>
-							老师-Teacher：{{ student.teacher }}
+					老师-Teacher：{{ student.teacher }}
     			</td>
     			<td>
     				<a href=" {% url 'show-student' student.id %}"><input type = "submit" value = "进入Enter" class = "btn btn-success"></a>
     			</td>
+    			
     			<td>
     					<a href=" {% url 'update-student' student.id %}"><input type = "submit" value = "更新Update" class = "btn btn-success"></a>
     			</td>
+    			
     		</tr>
-
-{% endfor %}
+	{% endif %}
+	{% endfor %}
 </table>
 {% else %}
 	<h1>Logged In Needed </h1>

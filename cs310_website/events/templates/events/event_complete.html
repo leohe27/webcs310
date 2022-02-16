@@ -1,0 +1,29 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+	<center>
+	<h1> Complete Events </h1>
+	<br/><br/>
+	{% if submitted %}
+		Event Has Completed Successfully!
+		
+	{% else %}
+		<form action = "" method = POST>
+			{% csrf_token %}
+
+			{{ form.as_p }}
+
+			<input type = "submit" value = "Complete" class = "btn btn-success">
+	</form>
+
+	{% endif %}
+
+	</center>
+{% else %}
+	<h1>Logged In Needed </h1>
+
+	<a class="nav-link" href="{%url 'login' %}">Login Here</a>
+	{% endif %}
+{% endblock %}

@@ -7,32 +7,34 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'list-events' %}">课程-Events</a>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            课程-Events
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'list-events'%}">全部课程- All Events</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'lesson-one'%}">Lesson 1 Events</a></li>
+            <li><a class="dropdown-item" href="{% url 'lesson-two'%}">Lesson 2 Events</a></li>
+            <li><a class="dropdown-item" href="{% url 'lesson-three'%}">Lesson 3 Events</a></li>
+          </ul>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'add-student' %}">添加学生-Add Student</a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'dashboard' %}">学生档案-Dashborad</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            学生-Students
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'dashboard'%}">学生档案- Students Dashboard</a></li>
+            <li><a class="dropdown-item" href="{%url 'add-student' %}">添加学生-Add Student</a></li>
+            
+          
+            </ul>
         </li>
-
         
         
-        {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="{%url 'logout' %}">Logout</a>
-          </li> 
-        {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{%url 'register_user' %}">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{%url 'login' %}">Login</a>
-          </li>
-        {% endif %}
+        
       </ul>
       <form class="d-flex" method = POST action = "{% url 'search-student' %}">
 
@@ -41,6 +43,28 @@
         <input class="form-control me-2" type="search" placeholder="Search Student" aria-label="Search" name="searched">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      
+      
+        
+        
+        <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="admin">Hi <strong>{{user}}</strong></a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'logout' %}">Logout</a>
+          </li> 
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'register_user' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'login' %}">Login</a>
+          </li>
+          {% endif %}
+        </ul>
+
     </div>
   </div>
 </nav>

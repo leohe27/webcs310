@@ -15,5 +15,5 @@ class ClassroomAdmin(admin.ModelAdmin):
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-	fields = (('name'),'description',)
+	fields = (('name'),'description','lesson')
 	

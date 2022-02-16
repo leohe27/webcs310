@@ -13,18 +13,19 @@
     <ul>
 
 	  <li>简介-Description：{{ event.description }}</li>
+    <li>Lesson: {{ event.lesson }}</li>
 
     </p>
 	</ul>
-  {% if event.id == 2 %}
+  {% if event.id == 1 %}
 	<a href=" {% url 'event-one'  %}">
       <input type = "submit" value = "开始挑战-Start Challenge" class = "btn btn-success"></a>
 
-  {% elif event.id == 3 %}
+  {% elif event.id == 2 %}
   <a href=" {% url 'event-two'  %}">
       <input type = "submit" value = "开始挑战-Start Challenge" class = "btn btn-success"></a>
 
-  {% elif event.id == 4 %}
+  {% elif event.id == 3 %}
   <a href=" {% url 'event-three'  %}">
       <input type = "submit" value = "开始挑战-Start Challenge" class = "btn btn-success"></a>
 

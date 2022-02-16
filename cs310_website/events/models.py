@@ -20,7 +20,8 @@ class MyClassStudent(models.Model):
 class Event(models.Model):
 	name = models.CharField('Event Name', max_length=120 ) 
 	description = models.TextField(blank = True)
-
+	lesson = models.IntegerField("Lesson Number", blank=False)
+	reward = models.IntegerField("Badge",blank=False, default="1")
 	def __str__(self):
 		return self.name
 

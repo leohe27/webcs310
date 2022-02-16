@@ -5,6 +5,14 @@ from .models import MyClassStudent
 from .forms import StudentForm
 from django.http import HttpResponseRedirect
 
+
+def event_complete(request):
+	name = 'Leo'
+	return render(request, 
+		'events/event_complete.html', {
+		'name' : name,
+		})
+
 def event_one(request):
 	name = 'Leo'
 	return render(request, 
@@ -95,11 +103,31 @@ def dashboard(request):
 		'Student':dashboard,
 		})
 
-
 def all_events(request):
 	event_list = Event.objects.all()
 	return render(request, 
 		'events/event_list.html', {
+		'event_list' : event_list
+		})
+
+def lesson_one(request):
+	event_list = Event.objects.all()
+	return render(request, 
+		'events/lesson_one.html', {
+		'event_list' : event_list
+		})
+
+def lesson_two(request):
+	event_list = Event.objects.all()
+	return render(request, 
+		'events/lesson_two.html', {
+		'event_list' : event_list
+		})
+
+def lesson_three(request):
+	event_list = Event.objects.all()
+	return render(request, 
+		'events/lesson_three.html', {
 		'event_list' : event_list
 		})
 
