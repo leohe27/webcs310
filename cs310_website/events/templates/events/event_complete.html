@@ -1,29 +1,33 @@
 {% extends 'events/base.html' %}
 
 {% block content %}
-{% if user.is_authenticated %}
-
+	{% if user.is_authenticated %}
 	<center>
-	<h1> Complete Events </h1>
-	<br/><br/>
-	{% if submitted %}
-		Event Has Completed Successfully!
-		
-	{% else %}
-		<form action = "" method = POST>
+		<h1> Complete Events and Add Badges to {{user}}'s students </h1>
+		<h2> 完成并且给{{user}}老师的学生添加奖牌 </h2>
+		<br/>
+		{% if submitted %}
+			Badges Has Been Added Successfully!
+			奖牌成功添加
+
+		{% else %}
+		<form action="" method = POST>
 			{% csrf_token %}
-
-			{{ form.as_p }}
-
-			<input type = "submit" value = "Complete" class = "btn btn-success">
-	</form>
-
-	{% endif %}
-
+			<label for="ClassName">班级Class Name: </label>
+			<select name="ClassName" id="ClassName">
+				{% if user.get_username == 'Leo' %}
+				<option value="A">A班</option>
+				{% else %}
+				<option value="B">B班</option>
+		    	{% endif %}
+		  	</select>
+		  <br><br>
+		  <input type = "submit" value = "确认Update" class = "btn btn-success">
+		</form>
+		{% endif %}
 	</center>
-{% else %}
+	{% else %}
 	<h1>Logged In Needed </h1>
-
-	<a class="nav-link" href="{%url 'login' %}">Login Here</a>
+	<a class="nav-link" href="{%url 'login' %}">Login</a>
 	{% endif %}
 {% endblock %}

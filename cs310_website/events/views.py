@@ -4,14 +4,24 @@ from .models import Event
 from .models import MyClassStudent
 from .forms import StudentForm
 from django.http import HttpResponseRedirect
-
+from django.db.models import F
 
 def event_complete(request):
-	name = 'Leo'
-	return render(request, 
-		'events/event_complete.html', {
-		'name' : name,
-		})
+	submitted = False
+	if request.method == 'POST':
+		classname = request.POST['ClassName']
+		if classname == 'A':
+			MyClassStudent.objects.filter(classroom__name='A').update(badge=F('badge') + 1)
+		else:
+			MyClassStudent.objects.filter(classroom__name='B').update(badge=F('badge') + 1)
+		submitted = True
+	else:
+		if submitted in request.GET:
+			submitted = True
+	return render(request,
+			'events/event_complete.html',{
+			'submitted':submitted
+			})	
 
 def event_one(request):
 	name = 'Leo'
@@ -76,8 +86,7 @@ def update_student(request, student_id):
 			form.save()
 			return redirect('dashboard')
 
-	return render(request,'events/update_student.html',
-		{
+	return render(request,'events/update_student.html',{
 		'Student':student,
 		'form':form
 		})
@@ -132,8 +141,7 @@ def lesson_three(request):
 		})
 
 def home(request, year = datetime.now().year, month = datetime.now().strftime('%B')):
-	name = 'Leo'
-	# month_number 
+	name = 'Leo' 
 	return render(request, 
 		'events/home.html', {
 		'name' : name,
