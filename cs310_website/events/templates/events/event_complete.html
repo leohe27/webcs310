@@ -1,6 +1,31 @@
 {% extends 'events/base.html' %}
 
 {% block content %}
+<head>
+		<style>
+		body {background-color: #FFDEAD;}
+	      h1 {
+	         color: #8B0000;
+	         
+	      }
+	      h2 {
+	         color: #8B0000;
+	         
+	      }
+	      p {
+	         color: #8B0000;
+	      }
+	      .floatRight {
+	      	float:right;
+	      	clear:right;
+	      	margin-left:20px
+	      }
+	      hr.rounded {
+		  	border-top: 8px solid white;
+		  	border-radius: 5px;
+		  }
+	      </style>
+</head>
 	{% if user.is_authenticated %}
 	<center>
 		<h1> Complete Events and Add Badges to {{user}}'s students </h1>

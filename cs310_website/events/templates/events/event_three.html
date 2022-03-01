@@ -1,51 +1,87 @@
 {% extends 'events/base.html' %}
 
 {% block content %}
-	
+<head>
+		<style>
+		body {background-color: #FFDEAD;}
+	      h1 {
+	         color: #8B0000;
+	         
+	      }
+	      h2 {
+	         color: #8B0000;
+	         
+	      }
+	      p {
+	         color: #8B0000;
+	      }
+	      .floatRight {
+	      	float:right;
+	      	clear:right;
+	      	margin-left:20px
+	      }
+	      hr.rounded {
+		  	border-top: 8px solid white;
+		  	border-radius: 5px;
+		  }
+	      </style>
+</head>
+		<img src="https://res.cloudinary.com/hcti/image/fetch/c_limit,f_auto,q_auto:good,w_400/https://docs.htmlcsstoimage.com/assets/images/cat.png" width="150" height="180" align="left">
+	     <img src="https://www.pinclipart.com/picdir/big/184-1843032_kawaii-cute-little-hearts-stickers-sticker-png-adorable.png" width="150" 
+	     height="180" align="right">
+
 	<center>
-	<h1> Event Three: Write Careers Around You </h1><br/>
+	<h1> Event Two: <br/>Careers Around You </h1><br/>
 	<h2>课程1.2：周围的职业</h2>
-	奖励：2 奖章
-	Reward： 2 Badges
 	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<li><strong>Step One: Think - 第一步: 小组讨论</strong></li>
-	<img src="https://assets.website-files.com/5d4ebd42326ec1aff24296cb/5f300b01fd0a3152c72ce739_Groupthink.png"style="width:500px;height:600px;">
+	<p>
+		完成奖励：<strong>2</strong> 奖章<br>
+		Reward： <strong>2</strong> Badges</p>
+	
+
+	<hr class="rounded">
+	<p>
+	<strong><font size="6">Step One: Discuss - 第一步: 小组讨论</font></strong>
+	<img src="https://assets.website-files.com/5d4ebd42326ec1aff24296cb/5f300b01fd0a3152c72ce739_Groupthink.png"style="width:500px;height:400px;">
 	</center>
 	<br/>
 	<br/>
-	<br/>
-	<br/>
+
+
+
+	<hr class="rounded">
 	<center>
-	<li><strong>Step Two: Writing - 第二步: 写下周围的职业</strong></li>
+		<p>
+		<strong><font size="6">Step Two: Writing - 第二步:</font></strong>
 	<br/>
-	<img src="https://media.istockphoto.com/vectors/students-sitting-together-at-table-with-books-and-studying-vector-id1170643552"style="width:500px;height:600px;">
 	<br/>
 	“我周围有哪些职业？”<br/>
 	“我喜欢哪个职业？为什么？”<br/>
+	<img src="https://media.istockphoto.com/vectors/students-sitting-together-at-table-with-books-and-studying-vector-id1170643552"style="width:500px;height:350px;">
+	<br/>
 	</center>
 	<br/>
 	<br/>
 	<br/>
+
+
 	<center>
-	<li><strong>Step Three: Presentation - 第三步: 阅读</strong></li>
+	<hr class="rounded">
+	<p>
+	<strong><font size="6">Step Three: Presentation - 第三步: 展示</font></strong>
 	<br/>
 	<br/>
-	额外奖励：1 奖章
+	额外奖励：<strong>1</strong> 奖章<br>
+		Bonus Reward： <strong>1</strong> Badges
+		<br/>
+	
+	<img src="https://www.pinclipart.com/picdir/big/9-90329_big-book-center-clipart-oral-presentation-clipart-png.png"style="width:500px;height:400px;">
 	<br/>
-	Extra Badge Reward:1
-	<br/>
-	<img src="http://www.kibworthcommunitylibrary.org.uk/wp-content/uploads/2017/11/reading-group-345x285.png"style="width:500px;height:600px;">
-	<br/>
-	“我周围有哪些职业？”<br/>
-	“我喜欢哪个职业？为什么？”<br/>
 	</center>
+	<hr class="rounded">
+
 	<br/>
-	<br/>
-	<br/>
-	<br/>
+
 	<center>
 		<a href=" {% url 'event-complete' %}">
 			<input type = "submit" value = "确认Complete" class = "btn btn-success">

@@ -2,7 +2,31 @@
 
 {% block content %}
 	
-
+<head>
+    <style>
+    body {background-color: #FFDEAD;}
+        h1 {
+           color: #8B0000;
+           
+        }
+        h2 {
+           color: #8B0000;
+           
+        }
+        p {
+           color: #8B0000;
+        }
+        .floatRight {
+          float:right;
+          clear:right;
+          margin-left:20px
+        }
+        hr.rounded {
+        border-top: 8px solid white;
+        border-radius: 5px;
+      }
+        </style>
+</head>
 <div class="card">
   <div class="card-header">
     <strong>{{ event.name }}</strong>
@@ -29,8 +53,16 @@
   <a href=" {% url 'event-three'  %}">
       <input type = "submit" value = "开始挑战-Start Challenge" class = "btn btn-success"></a>
 
-  {% else %}
+  {% elif event.id == 4 %}
   <a href=" {% url 'event-four'  %}">
+      <input type = "submit" value = "开始挑战-Start Challenge" class = "btn btn-success"></a>
+
+  {% elif event.id == 5 %}
+  <a href=" {% url 'event-five'  %}">
+      <input type = "submit" value = "开始挑战-Start Challenge" class = "btn btn-success"></a>
+
+  {% else %}
+  <a href=" {% url 'event-six'  %}">
       <input type = "submit" value = "开始挑战-Start Challenge" class = "btn btn-success"></a>
 
 	{% endif %}

@@ -2,7 +2,32 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-
+	<head>
+		<title>Add Student</title>
+		<style>
+		body {background-color: #FFDEAD;}
+	      h1 {
+	         color: #8B0000;
+	         
+	      }
+	      h2 {
+	         color: #8B0000;
+	         
+	      }
+	      p {
+	         color: #8B0000;
+	      }
+	      .floatRight {
+	      	float:right;
+	      	clear:right;
+	      	margin-left:20px
+	      }
+	      hr.rounded {
+		  	border-top: 8px solid white;
+		  	border-radius: 5px;
+		  }
+	      </style>
+	</head>
 	<center>
 	<h1> Add Student To Database 添加学生 </h1>
 	<br/>

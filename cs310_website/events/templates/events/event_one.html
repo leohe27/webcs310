@@ -1,47 +1,101 @@
 {% extends 'events/base.html' %}
 
 {% block content %}
-	
-	<center>
-	<h1> Event One: Video and Discuss </h1><br/>
-	<h2>课程1.1：视频和讨论</h2>
-	奖励：2 奖章
-	Reward： 2 Badges
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<li><strong>Step One: Watch Videos - 第一步: 观看视频</strong></li>
-		<iframe src="//player.bilibili.com/player.html?aid=802784734&bvid=BV14y4y1s7me&cid=329382370&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-    	</div>
-		</div>
-	</center>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<center>
-	<li><strong>Step Two: Discuss - 第二步: 讨论</strong></li>
-	<br/>
-	<img src="https://www.smith.edu/ssw/bulletin/uploads/p_1110.jpg">
-	<br/>
-	“有哪些职业是我第一次听说的？”<br/>
-	“我喜欢哪个职业？为什么？”<br/>
-	</center>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<center>
-		<a href=" {% url 'event-complete' %}">
-			<input type = "submit" value = "确认Complete" class = "btn btn-success">
-    	</a>
-	</center>
+<!DOCTYPE html>
+<html>
+	<title>Event 1.1</title>
+		<style>
+		body {background-color: #FFDEAD;}
+	      h1 {
+	         color: #8B0000;
+	         
+	      }
+	      h2 {
+	         color: #8B0000;
+	         
+	      }
+	      p {
+	         color: #8B0000;
+	      }
+	      .floatRight {
+	      	float:right;
+	      	clear:right;
+	      	margin-left:20px
+	      }
+	      hr.rounded {
+		  	border-top: 8px solid white;
+		  	border-radius: 5px;
+		  }
+	      </style>
+	<body>
+		<img src="https://res.cloudinary.com/hcti/image/fetch/c_limit,f_auto,q_auto:good,w_400/https://docs.htmlcsstoimage.com/assets/images/cat.png" width="150" 
+	     height="180" align="left">
+	     <img src="https://www.pinclipart.com/picdir/big/184-1843032_kawaii-cute-little-hearts-stickers-sticker-png-adorable.png" width="150" 
+	     height="180" align="right">
+		<center>
+		<h1> Event One: Video and Discuss </h1><br/>
+		<h2>课程1.1：视频和讨论</h2>
+		<br/>
+		<br/>
+		<p>
+		完成奖励：<strong>2</strong> 奖章<br>
+		Reward： <strong>2</strong> Badges</p>
+
+
+		<hr class="rounded">
+		<p>
+		<strong><font size="6">Step One: Watch Videos - 第一步: 观看视频</font></strong>
+		</p>
+			<iframe src="https://player.bilibili.com/player.html?aid=802784734&bvid=BV14y4y1s7me&cid=329382370&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600" > </iframe>
+	    	</div>
+			</div>
+		</center>
+		<br/>
+		<br/>
+		<hr class="rounded">
+
 		
-	<br/>
-	<br/>
-	<br/>
-	
+		<center>
+		<p><strong><font size="6">Step Two: Discuss - 第二步: 讨论</font></strong>
+		<br/>
+		<br/>
+		“有哪些职业是我第一次听说的？”<br/>
+		“我喜欢哪个职业？为什么？”<br/>
+		<br/>
+		<img src="https://www.smith.edu/ssw/bulletin/uploads/p_1110.jpg">
+		<br/>
+		</p>
+		<br/>
+		<hr class="rounded">
+		<center>
+		<p><strong><font size="6">Step Three: Share - 第三步: 分享</font></strong>
+		<br/>
+		<br/>
+		额外奖励：<strong>1</strong> 奖章<br>
+		Bonus Reward： <strong>1</strong> Badges
+		<br/>
+		<br/>
 
-
+		与老师和同学分享你的观点
+		<br/>
+		<br/>
+		<img src="https://previews.123rf.com/images/robuart/robuart2007/robuart200700406/152337939-.jpg">
+		<br/>
+		<br/>
+		</p>
+		<hr class="rounded">
+		
+			<a href=" {% url 'event-complete' %}">
+				<input type = "submit" value = "确认Complete" class = "btn btn-success">
+	    	</a>
+		</center>
+			
+		<br/>
+		<br/>
+		<br/>
+	</body>
+</html>
 {% endblock %}
+	
+	
+	

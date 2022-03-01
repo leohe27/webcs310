@@ -2,7 +2,31 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-
+<head>
+		<style>
+		body {background-color: #FFDEAD;}
+	      h1 {
+	         color: #8B0000;
+	         
+	      }
+	      h2 {
+	         color: #8B0000;
+	         
+	      }
+	      p {
+	         color: #8B0000;
+	      }
+	      .floatRight {
+	      	float:right;
+	      	clear:right;
+	      	margin-left:20px
+	      }
+	      hr.rounded {
+		  	border-top: 8px solid white;
+		  	border-radius: 5px;
+		  }
+	      </style>
+</head>
 	<h1> 学生个人中心 Student Dashboard </h1><br>
 	<br/>
 	<p>This page only shows stduents registered by teacher: <strong>{{ user }}</strong></p>

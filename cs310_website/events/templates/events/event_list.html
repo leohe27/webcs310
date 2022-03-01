@@ -1,10 +1,34 @@
 {% extends 'events/base.html' %}
 
 {% block content %}
-	
+<head>
+		<style>
+		body {background-color: #FFDEAD;}
+	      h1 {
+	         color: #8B0000;
+	         
+	      }
+	      h2 {
+	         color: #8B0000;
+	         
+	      }
+	      p {
+	         color: #8B0000;
+	      }
+	      .floatRight {
+	      	float:right;
+	      	clear:right;
+	      	margin-left:20px
+	      }
+	      hr.rounded {
+		  	border-top: 8px solid white;
+		  	border-radius: 5px;
+		  }
+	      </style>
+</head>	
 	<h1> 课程 Events </h1>
 
-<strong> Lesson 1:Introduction</strong>
+<p><strong> Lesson 1:Introduction</strong></p>
 <table class="table table-striped table-hover table-bordered ">
 {% for event in event_list %}
 {% if event.lesson == 1 %}
@@ -20,12 +44,13 @@
     					<input type = "submit" value = "进入Enter" class = "btn btn-success"></a>
     			</td>
     		</tr>
+
 {% endif %}
 {% endfor %}
 </table>
 <br/>
 
-<strong> Lesson 2:Exploration</strong>
+<p><strong> Lesson 2:Exploration</strong></p>
 <table class="table table-striped table-hover table-bordered ">
 {% for event in event_list %}
 {% if event.lesson == 2 %}
@@ -46,7 +71,7 @@
 </table>
 <br/>
 
-<strong> Lesson 3:Reflection</strong>
+<p><strong> Lesson 3:Reflection</strong></p>
 <table class="table table-striped table-hover table-bordered ">
 {% for event in event_list %}
 {% if event.lesson == 3 %}

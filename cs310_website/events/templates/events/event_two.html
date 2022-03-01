@@ -1,48 +1,101 @@
 {% extends 'events/base.html' %}
 
 {% block content %}
-	
+<head>
+		<style>
+		body {background-color: #FFDEAD;}
+	      h1 {
+	         color: #8B0000;
+	         
+	      }
+	      h2 {
+	         color: #8B0000;
+	         
+	      }
+	      p {
+	         color: #8B0000;
+	      }
+	      .floatRight {
+	      	float:right;
+	      	clear:right;
+	      	margin-left:20px
+	      }
+	      hr.rounded {
+		  	border-top: 8px solid white;
+		  	border-radius: 5px;
+		  }
+		  .row::after {
+  			content: "";
+  			clear: both;
+  			display: table;
+		   }
+		   .column {
+  			width: 33.33%;
+  			padding: 5px;
+  			margin-left: auto;
+        	margin-right: auto;
+			}
+	      </style>
+</head>
+		<img src="https://www.pinclipart.com/picdir/big/568-5687872_kawaii-clipart-whale-kawaii-cute-drawings-of-animals.png" width="150" height="180" align="left">
+	     <img src="https://www.pinclipart.com/picdir/big/540-5401167_animals-clip-art-png-download.png" width="100" 
+	     height="180" align="right">
+
 	<center>
-	<h1> Event Two: Draw Your Future Job  </h1><br/>
+	<h1> Event Three: Draw Your Future Job  </h1><br/>
 	<h2>课程2.1：描述梦想日 - 未来</h2>
-	奖励：2 奖章
-	Reward： 2 Badges
+	<br/>
+	<p>
+		完成奖励：<strong>2</strong> 奖章<br>
+		Reward： <strong>2</strong> Badges</p>
 	<br/>
 	<br/>
-	<br/>
-	<br/>
-	<li><strong>Step One: Draw - 第一步: 绘画<br/>
-	<div class="row">
+	<hr class="rounded">
+	<p>
+	<strong><font size="6">Step One: Draw - 第一步: 绘画</font></strong>
+	<center>
+		<div class="row">
   		<div class="column">	
-			<img src="https://png.pngtree.com/illustration/20190226/ourlarge/pngtree-start-after-the-holiday-go-to-work-exhausted-hand-painted-image_13236.jpg">
+			<img src="https://png.pngtree.com/illustration/20190226/ourlarge/pngtree-start-after-the-holiday-go-to-work-exhausted-hand-painted-image_13236.jpg" width="300" 
+	     	height="400">
 		</div>
 		<div class="column">
-			<img src="https://png.pngtree.com/illustration/20190226/ourlarge/pngtree-office-sleepy-start-after-the-holiday-holiday-syndrome-image_13284.jpg">
+			<img src="https://png.pngtree.com/illustration/20190226/ourlarge/pngtree-office-sleepy-start-after-the-holiday-holiday-syndrome-image_13284.jpg"width="300" 
+	     	height="400">
 		</div>
 	</div>
 	<div class="row">	
 		<div class="column">
-			<img src="https://png.pngtree.com/illustration/20190226/ourlarge/pngtree-career-position-industry-jobs-image_7600.jpg">	
+			<img src="https://png.pngtree.com/illustration/20190226/ourlarge/pngtree-career-position-industry-jobs-image_7600.jpg"width="300" 
+	     	height="400">	
 		</div>
 		<div class="column">
-			<img src="https://png.pngtree.com/illustration/20190226/ourlarge/pngtree-career-illustration-lawyer-court-just-image_7109.jpg">	
+			<img src="https://png.pngtree.com/illustration/20190226/ourlarge/pngtree-career-illustration-lawyer-court-just-image_7109.jpg"width="300" 
+	     	height="400">	
 		</div>
-	</div>	
+	</div>
+	</center>
+		
 	<br/>
 	<br/>
 	<br/>
+	<hr class="rounded">
+	<p>
+	<strong><font size="6">Step Two: Presentation - 第二步: 展示</font></strong>
 	<center>
-	<li><strong>Step Two: Presentation - 第二步: 展示</strong></li>
 	<br/>
+	<p>
+	额外奖励：<strong>1</strong> 奖章<br>
+		Bonus Reward： <strong>1</strong> Badges
+		<br/>
 	<br/>
-	额外奖励：1 奖章
+	举手向老师示意，给大家展示自己的作品<br/>
+	</p>
 	<br/>
-	Extra Badge Reward:1
+	<img src="https://www.clipartmax.com/png/full/17-173914_child-clipart-public-speaking-class-presentation-clipart.png"width="300" height="400">
+	
 	<br/>
-	举手向老师示意，给大家展示自己的作品？<br/>
-	<br/>
-	<br/>
-	<br/>
+	<hr class="rounded">
 	<center>
 		<a href=" {% url 'event-complete' %}">
 			<input type = "submit" value = "确认Complete" class = "btn btn-success">
