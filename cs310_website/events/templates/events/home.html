@@ -25,17 +25,78 @@
 		  	border-radius: 5px;
 		  }
 	      </style>
+{% if user.is_authenticated %}
 </head>
+	<img src="http://www.cupheadgame.com/images/cuphead_jump.gif" width="150" height="180" align="left">
+	<img src="https://i.redd.it/e2ydzj0f8hg01.gif" width="150" height="180" align="right">
+	
 	<center>
 	<h1> Welcome to the Career Advice Course Website for CS310 </h1><br/>
 
 	<h2> 欢迎来到职业认知教育网页 </h2> <br/>
 
 
+	<div class="row row-cols-1 row-cols-md-3 g-4">
+	  <div class="col">
+	    <div class="card h-100">
+	      <img src="https://www.onatlas.com/wp-content/uploads/2019/03/education-students-people-knowledge-concept-P6MBQ5W-1080x675.jpg" class="card-img-top" alt="...">
+	      <br>
+	      <br>
+	      <br>
+	      <div class="card-body">
+	        <h5 class="card-title">学生中心-Student Leaderboard</h5>
+	        <p class="card-text">学科教师是推动课堂教学改革的重要合作伙伴，加强职业启蒙与各学科之间
+			的融合除了形成良好氛围以调动其积极性外，还应当重视各学科教师在职业启蒙
+			方面的专业化程度.</p>
+	        <a href="{% url 'dashboard'%}" class="btn btn-success">Enter</a>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col">
+	    <div class="card h-100">
+	      <img src="https://assets-homepages-learning.3plearning.net/wp-content/uploads/2020/06/blog-20-student-engagement-strategies-captivating-classroom.png" class="card-img-top" alt="...">
+
+	      <div class="card-body">
+	        <h5 class="card-title">所有课程-All Lesson</h5>
+	        <p class="card-text">除专业的职业启蒙教师外，核心学科的教师在职业启蒙教育中的作用得到了
+			国内外研究者的充分肯定，最大限度地提高各学科教师的参与和合作，从而加强
+			职业启蒙教育与各学科的融合将是职业启蒙教育顺利实现目标的关键.</p>
+	        <a href="{% url 'list-events'%}" class="btn btn-success">Enter</a>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col">
+	    <div class="card h-100">
+	      <img src="https://as1.ftcdn.net/v2/jpg/02/75/79/16/1000_F_275791675_7h7oZeP78QEzpvopQYFAVVg60u8A1euy.jpg" alt="...">
+	      <br>
+	      <br>
+	      <br>
+	      <div class="card-body">
+	        <h5 class="card-title">添加学生-Add Student</h5>
+	        <p class="card-text">实施职业启蒙教育不仅要靠与各个学科之间的有机结合，同时还需要同更为
+			丰富的活动进行组合共同来维护好学生们的好奇与兴趣，培养学生职业规划与决
+			策能力。</p>
+	        <a href="{%url 'add-student' %}" class="btn btn-success">Enter</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<img src="https://i.gifer.com/origin/99/999b2183c19ca9288a6995c4d7bb0b3e_w200.gif" width="150" height="180" align="left">
+	<img src="https://64.media.tumblr.com/70590f24cd935029bbb6eaf28ff7a3de/ee28a6aeb2390404-d5/s1280x1920/ad1aa61f0b6a867158d4a8f8fda2962828a80c58.gifv" width="150" height="180" align="right">
+	<hr class="rounded">
 	{{ month }}<br/>
 	{{ year }}
 
 	</center>
-
+{% else %}
+<center>
+	<h1>Logged In Needed </h1>
+	<br>
+	<br>
+	<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8e63cca8-854d-4d97-89b0-cf5adff80b57/dc4nfaw-83f92bd4-f998-48c8-b20e-94d48d46a0c0.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhlNjNjY2E4LTg1NGQtNGQ5Ny04OWIwLWNmNWFkZmY4MGI1N1wvZGM0bmZhdy04M2Y5MmJkNC1mOTk4LTQ4YzgtYjIwZS05NGQ0OGQ0NmEwYzAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._jz32hFl__y2adOP4e2m_ZPCrfgnYB74bhuM7hRir0o" width="300" height="300">
+	<hr class="rounded">
+	<a href=" {%url 'login' %}"><input type = "submit" value = "登陆Login" class = "btn btn-success"></a>
+</center>
+{% endif %}
 
 {% endblock %}

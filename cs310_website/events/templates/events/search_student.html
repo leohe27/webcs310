@@ -26,6 +26,7 @@
 		  }
 	      </style>
 </head>	
+{% if user.is_authenticated %}
 	<center>
 
 	{% if searched %}
@@ -61,7 +62,14 @@
 	{% endif %}
 	</center>
 	
-
+{% else %}
+<center>
+	<h1>Logged In Needed </h1>
+	<br>
+	<br>
+	<a href=" {%url 'login' %}"><input type = "submit" value = "登陆Login" class = "btn btn-success"></a>
+</center>
+{% endif %}
 
 {% endblock %}
 

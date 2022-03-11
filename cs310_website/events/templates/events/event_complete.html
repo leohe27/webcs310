@@ -42,6 +42,8 @@
 			<select name="ClassName" id="ClassName">
 				{% if user.get_username == 'Leo' %}
 				<option value="A">A班</option>
+				{% elif user.get_username == 'TeacherA' %}
+				<option value="A">A班</option>
 				{% else %}
 				<option value="B">B班</option>
 		    	{% endif %}
